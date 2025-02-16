@@ -1,0 +1,11 @@
+.description-field{
+    width: 30em;
+}
+
+img{
+    width: 18px;
+}
+
+.description-field{
+    justify-content: space-between;
+}
