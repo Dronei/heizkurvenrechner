@@ -70,9 +70,17 @@ document.querySelector(".btn-success").addEventListener("click", () => {
 });
 
 function validateInput(element) {
-    if(element.value > element.min && element.value < element.max){
+    if (element.value < element.max) {
         console.error(`Ungültiger Wert! ${element.value} °C ist kleiner als ${element.min} °C`);
-    } else if (element.value > element.max){
-        console.error(`Ungültiger Wert! ${element.value} °C ist größer als ${element.max} °C`);
+        element.classList.add("invalid-feedback", "d-inline-flex", "focus-ring", "focus-ring-danger", "py-1", "px-2", "text-decoration-none", "border", "rounded-2");
+
     }
+
+    if (element.value > element.min) {
+        console.error(`Ungültiger Wert! ${element.value} °C ist größer als ${element.max} °C`);
+        element.classList.add("invalid-feedback", "d-inline-flex", "focus-ring", "focus-ring-danger", "py-1", "px-2", "text-decoration-none", "border", "rounded-2");
+    }
+
+    element.classList.add("invalid-feedback", "d-inline-flex", "focus-ring", "focus-ring-success", "py-1", "px-2", "text-decoration-none", "border", "rounded-2");
+
 };
