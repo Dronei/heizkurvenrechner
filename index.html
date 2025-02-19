@@ -12,8 +12,8 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
         defer></script>
 
-    <script src="./app.js" type="module" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="./js/app.js" type="module" defer></script>
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
                 <span class="input-group-text description-field">Norm Aussentemperatur<span class="img-info"><a href="#"
                             data-bs-toggle="tooltip" data-bs-placement="right"
                             data-bs-title="Normaussentemperatur im Bereich von -30°C bis +5°C"><img
-                                src="circle-info-solid.svg" alt="info"></a></span>
+                                src="./resources/img/circle-info-solid.svg" alt="info"></a></span>
                 </span>
                 <input type="number" class="form-control input-field has-validation" placeholder="-12" aria-label="-12"
                     aria-describedby="basic-addon1" min="-30" , max="5" , step="1" tabindex="1">
@@ -37,7 +37,7 @@
                 <span class="input-group-text description-field">VLT bei Norm Aussentemperatur<span class="img-info"><a
                             href="#" data-bs-toggle="tooltip" data-bs-placement="right"
                             data-bs-title="Vorlauftemperatur bei Normaussentemperatur im Bereich von +30°C bis +90°C"><img
-                                src="circle-info-solid.svg" alt="info"></a></span>
+                                src="./resources/img/circle-info-solid.svg" alt="info"></a></span>
                 </span>
                 <input type="number" class="form-control input-field has-validation" placeholder="37" aria-label="37"
                     aria-describedby="basic-addon1" min="30" , max="90" , step="0.5" tabindex="2">
@@ -47,7 +47,7 @@
             <div class="input-group mb-3">
                 <span class="input-group-text description-field">Fusspunkttemperatur<span class="img-info"><a href="#"
                             data-bs-toggle="tooltip" data-bs-placement="right"
-                            data-bs-title="Fusspunkt der Aussentemperatur ist fix 20°C"><img src="circle-info-solid.svg"
+                            data-bs-title="Fusspunkt der Aussentemperatur ist fix 20°C"><img src="./resources/img/circle-info-solid.svg"
                                 alt="info"></a></span>
                 </span>
                 <input type="number" class="form-control input-field has-validation" placeholder="20" aria-label="20"
@@ -59,7 +59,7 @@
                 <span class="input-group-text description-field">Fusspunkt Vorlauftemperatur<span class="img-info"><a
                             href="#" data-bs-toggle="tooltip" data-bs-placement="right"
                             data-bs-title="Vorlauftemperatur bei Fusspunkttemperatur im Bereich von 10°C bis 40°C"><img
-                                src="circle-info-solid.svg" alt="info"></a></span>
+                                src="./resources/img/circle-info-solid.svg" alt="info"></a></span>
                 </span>
                 <input type="number" class="form-control input-field has-validation" placeholder="30" aria-label="30"
                     aria-describedby="basic-addon1" min="10" , max="40" , step="0.5" tabindex="3">
@@ -70,7 +70,7 @@
                 <span class="input-group-text description-field">Heizgrenze<span class="img-info"><a href="#"
                             data-bs-toggle="tooltip" data-bs-placement="right"
                             data-bs-title="Heizgrenze ab welcher Aussentemperatur der Heizbetrieb beginnt. Wird in der Tabelle gelb dargestellt. Temperaturbereich von -10°C bis +30°C"><img
-                                src="circle-info-solid.svg" alt="info"></a></span>
+                                src="./resources/img/circle-info-solid.svg" alt="info"></a></span>
                 </span>
                 <input type="number" class="form-control input-field has-validation" placeholder="14" aria-label="14"
                     aria-describedby="basic-addon1" min="-10" , max="30" , step="0.5" tabindex="4">
@@ -80,7 +80,7 @@
             <div class="input-group mb-3">
                 <span class="input-group-text description-field">Durchschnittliche Aussentemperatur<span
                         class="img-info"><a href="#" data-bs-toggle="tooltip" data-bs-placement="right"
-                            data-bs-title="Durchschnittliche Aussentemperatur"><img src="circle-info-solid.svg"
+                            data-bs-title="Durchschnittliche Aussentemperatur"><img src="./resources/img/circle-info-solid.svg"
                                 alt="info"></a></span></span>
                 <input type="number" class="form-control input-field has-validation" placeholder="0" aria-label="0"
                     aria-describedby="basic-addon1" step="0.5" tabindex="5" min="-50" , max="50" , step="1">
@@ -91,7 +91,7 @@
                 <span class="input-group-text description-field">Offset zur tatsächlichen Vorlauftemperatur
                     soll<span class="img-info"><a href="#" data-bs-toggle="tooltip" data-bs-placement="right"
                             data-bs-title="Wert um den die tatsächliche Vorlauftemperatur höher ist als der in der Tabelle"><img
-                                src="circle-info-solid.svg" alt="info"></a></span></span>
+                                src="./resources/img/circle-info-solid.svg" alt="info"></a></span></span>
                 <input type="number" class="form-control input-field has-validation" placeholder="0" aria-label="0"
                     aria-describedby="basic-addon1" tabindex="6" min="-50" , max="50" , step="0.5">
                 <span class="input-group-text">°C

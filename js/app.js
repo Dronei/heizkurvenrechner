@@ -1,26 +1,27 @@
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+"use strict";
 
-let allValues = document.querySelectorAll(`.input-field`);
+import { Helper } from "./helper.js";
 
-for (const element of allValues) {
-    element.addEventListener("change", () => {
-        validateInput(element);
-    });
-};
+const sessionStorageKey = "key-session-heizkostenrechner";
+const classnameInputFields = ".input-field";
+const allValues = document.querySelectorAll(classnameInputFields);
+
+const helper = new Helper(sessionStorageKey, classnameInputFields, allValues);
+
+helper.getSessionStorage(sessionStorageKey, classnameInputFields);
+
+helper.eventHandler();
 
 document.querySelector(".btn-success").addEventListener("click", () => {
     if (document.querySelectorAll(".focus-ring-danger").length > 0) {
-        clearTable();
-        renderErrorMessage("Ungültiger Wert wurde eingegeben!");
+        helper.clearTable();
+        helper.renderErrorMessage("Ungültiger Wert wurde eingegeben!");
     } else {
         let values = new Array();
         let everythingSet = true;
 
         for (const element of allValues) {
-            console.log(element.valueAsNumber);
             if (isNaN(element.valueAsNumber)) {
-                debugger
                 everythingSet = false;
                 renderErrorMessage("Nicht alle Werte wurden eingegeben!");
                 break;
@@ -57,7 +58,6 @@ document.querySelector(".btn-success").addEventListener("click", () => {
 
             for (let x = values[0]; x <= values[2]; x++) {
                 let f = k * x + d;
-                console.log(x, f.toFixed(2));
                 let row = document.createElement("tr");
 
                 if (x == values[5]) {
@@ -84,31 +84,3 @@ document.querySelector(".btn-success").addEventListener("click", () => {
         }
     }
 });
-
-function validateInput(element) {
-    if (Number(element.value) < Number(element.min) || Number(element.value) > Number(element.max)) {
-        console.error(`Ungültiger Wert! ${element.value} °C ist kleiner als ${element.min} °C`);
-        element.classList.replace("focus-ring-success", "focus-ring-danger");
-        element.classList.replace("valid-feedback", "invalid-feedback");
-        element.classList.add("invalid-feedback", "focus-ring-danger", "d-inline-flex", "focus-ring", "py-1", "px-2", "text-decoration-none", "border", "rounded-2");
-    } else {
-        element.classList.replace("focus-ring-danger", "focus-ring-success");
-        element.classList.replace("invalid-feedback", "valid-feedback");
-        element.classList.add("valid-feedback", "focus-ring-success", "d-inline-flex", "focus-ring", "py-1", "px-2", "text-decoration-none", "border", "rounded-2");
-    }
-
-    document.querySelector("#warning-area").replaceChildren("");
-};
-
-function clearTable() {
-    document.querySelector("tbody").replaceChildren("");
-}
-
-function renderErrorMessage(message) {
-    let span = document.createElement("span");
-    span.classList.add("alert", "alert-warning");
-    span.setAttribute("role", "alert");
-    span.textContent = message;
-
-    document.querySelector("#warning-area").appendChild(span);
-}
